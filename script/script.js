@@ -29,11 +29,14 @@ function Table(target, library) {
 
 Table.prototype = {
     populateTable: function () {
-        this.library.forEach(x => {
+        this.library.forEach((x, i) => {
             const row = document.createElement("tr");
-            for (let i in x) {
+            const index = document.createElement("td");
+            index.textContent = i + 1;
+            row.appendChild(index);
+            for (let j in x) {
                 const cell = document.createElement("td");
-                cell.textContent = x[i];
+                cell.textContent = x[j];
                 row.appendChild(cell);
             }
             this.target.appendChild(row);
