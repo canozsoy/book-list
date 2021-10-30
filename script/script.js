@@ -43,7 +43,12 @@ Table.prototype = {
         });
     },
     addRow: function () {
-
+        const newRow = document.createElement("tr");
+        Object.keys(this.library[0]).forEach(x => {
+            const newCell = document.createElement("td");
+            newRow.appendChild(newCell);
+        })
+        this.target.appendChild(newRow);
     },
     deleteRow: function () {
 
@@ -62,10 +67,15 @@ function Book(title, author, pages, readInfo) {
 
 const bookLocalStorage = new LocalStorageObject("books");
 const library = bookLocalStorage.initialize();
-console.log(library)
 
 const table = new Table(document.querySelector("table"), library);
 table.populateTable();
+
+const rowAdder = document.querySelector("#content span");
+rowAdder.addEventListener("click", () => {
+    table.addRow();
+});
+
 
 
 

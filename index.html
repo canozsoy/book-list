@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="shortcut icon" href="static/favicon.svg" type="image/svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <nav>Book List</nav>
     <div id="content">
@@ -25,5 +27,19 @@
         </table>
     </div>
     <footer>2021, &copy; Can Özsoy</footer>
+    <div id="book_form_container">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author">
+            <label for="pages"># of Pages</label>
+            <input type="text" name="pages" id="pages">
+            <label for="read">Read or Not?</label>
+            <input type="radio" name="read" id="read">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
 </body>
+
 </html>

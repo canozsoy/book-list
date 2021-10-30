@@ -2,6 +2,7 @@ $bg-color: #2b2b2b;
 $width-elements: 80%;
 $padding-elements: 20px;
 
+@import 'modal';
 @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 @mixin centered-flex {
     display: flex;
@@ -21,7 +22,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     min-width: 100vw;
-    background-color: #112821;
+    background-color: $bg-color;
     color: azure;
     nav {
         font-size: 40px;
