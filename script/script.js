@@ -53,7 +53,7 @@ Table.prototype = {
     deleteRow: function () {
 
     },
-    modifyRow: function() {
+    modifyRow: function () {
 
     }
 };
@@ -65,16 +65,51 @@ function Book(title, author, pages, readInfo) {
     this.readInfo = readInfo;
 }
 
+function ModalForm(target) {
+    this.target = target;
+}
+
+ModalForm.prototype = {
+    show() {
+        this.target.style.display = "flex";
+    },
+    hide() {
+        this.target.style.display = "";
+    },
+    submit(event) {
+        event.preventDefault();
+        console.log(event);
+    }
+}
+
+// Initialize data and table
+
 const bookLocalStorage = new LocalStorageObject("books");
 const library = bookLocalStorage.initialize();
 
 const table = new Table(document.querySelector("table"), library);
 table.populateTable();
 
+const modalForm = new ModalForm(document.querySelector("#book_form_container"));
+
+// Event listeners
 const rowAdder = document.querySelector("#content span");
 rowAdder.addEventListener("click", () => {
-    table.addRow();
+    modalForm.show();
 });
+
+const closeButton = document.querySelector(".close_button");
+closeButton.addEventListener("click", () => {
+    modalForm.hide();
+})
+
+modalForm.target.addEventListener("submit", (event) => {
+    modalForm.submit(event);
+})
+
+function onSubmission(event) {
+    event.preventDefault();
+}
 
 
 

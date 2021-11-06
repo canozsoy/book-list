@@ -1,70 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
-body #book_form_container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-  background-color: rgba(43, 43, 43, 0.4);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body #book_form_container div {
-  width: 50%;
-  height: 50%;
-  background-color: #2b2b2b;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-body #book_form_container label {
-  width: 50%;
-  font-size: 20px;
-  padding: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body #book_form_container input {
-  width: 50%;
-  height: 40px;
-  font-size: 20px;
-}
-
-body #book_form_container button {
-  width: 50%;
-  height: 40px;
-  font-size: 20px;
-  background-color: yellowgreen;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -122,7 +56,7 @@ body #content {
 
 body #content span {
   display: inline-block;
-  width: 50%;
+  width: 80%;
   padding: 10px 40px;
 }
 
@@ -158,5 +92,157 @@ body footer {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px;
+}
+
+body #book_form_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+body #book_form_container #book_form {
+  padding: 20px;
+  width: 40%;
+  height: auto;
+  background-color: #424242;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 5px;
+}
+
+body #book_form_container #book_form .close_button {
+  position: relative;
+  top: -20px;
+  font-size: 40px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+body #book_form_container #book_form .close_button:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+body #book_form_container .text_label {
+  width: 50%;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+body #book_form_container .text_input {
+  width: 50%;
+  height: 40px;
+  font-size: 20px;
+  text-indent: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+body #book_form_container .text_input:focus[type="text"] {
+  outline: 2px solid yellowgreen;
+}
+
+body #book_form_container button {
+  width: 50%;
+  height: 40px;
+  font-size: 20px;
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+body #book_form_container button:hover {
+  background-color: #7ba428;
+  cursor: pointer;
+}
+
+.custom_radio_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+  padding: 10px;
+}
+
+.custom_radio_label {
+  width: 100%;
+  font-size: 20px;
+}
+
+.custom_radio_container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.custom_radio_container:hover input ~ .custom_radio_checkmark {
+  background-color: #919191;
+}
+
+.custom_radio_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom_radio_container input:checked ~ .custom_radio_checkmark {
+  background-color: yellowgreen;
+}
+
+.custom_radio_checkmark {
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #aaa;
 }
 /*# sourceMappingURL=stylesheet.css.map */

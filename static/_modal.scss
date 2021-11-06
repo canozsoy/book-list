@@ -1,8 +1,9 @@
-$bg-color: #2b2b2b;
+$bg-color: #424242;
 $padding-elements: 20px;
 $font-size: $padding-elements;
 $width-elements: 50%;
 $height-elements: 40px;
+$border-radius: 5px;
 
 @mixin centered-flex {
     display: flex;
@@ -18,31 +19,59 @@ body {
         height: 100vh;
         width: 100vw;
         z-index: 1;
-        background-color: rgba($color: $bg-color, $alpha: 0.4);
+        background-color: rgba($color: #000, $alpha: 0.4);
+        transition: all 0.5s ease-out;
         @include centered-flex;
-        div {
-            width: $width-elements;
-            height: 50%;
+        display: none;
+        #book_form {
+            padding: 20px;
+            width: 40%;
+            height: auto;
             background-color: $bg-color;
             @include centered-flex;
             flex-direction: column;
+            border-radius: $border-radius;
+            .close_button {
+                position: relative;
+                top: -20px;
+                font-size: 40px;
+                align-self: flex-end;
+                &:hover {
+                    cursor: pointer;
+                    color: #ccc;
+                }
+            }
         }
-        label {
+        .text_label {
             width: $width-elements;
             font-size: $font-size;
             padding: $padding-elements / 2;
-            @include centered-flex;
+            border-radius: $border-radius;
+            
         }
-        input {
+        .text_input {
             width: $width-elements;
             height: $height-elements;
             font-size: $font-size;
+            text-indent: $padding-elements / 2;
+            border: none;
+            border-radius: $border-radius;
+            &:focus[type="text"] {
+                outline: 2px solid yellowgreen;
+            }
         }
         button {
             width: $width-elements;
             height: $height-elements;
             font-size: $font-size;
             background-color: yellowgreen;
+            border: none;
+            border-radius: $border-radius;
+            &:hover {
+                background-color: darken($color: yellowgreen, $amount: 10);
+                cursor: pointer;
+            }
+            margin-bottom: $padding-elements;
         }
     }
 }
