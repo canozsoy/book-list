@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book List</title>
     <link rel="stylesheet" href="static/stylesheet.css">
-    <script src="script/script.js" defer></script>
+    <script src="script/script.js" type="module" defer></script>
     <link rel="shortcut icon" href="static/favicon.svg" type="image/svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -40,12 +40,12 @@
                 <p class="custom_radio_label">Read or Not?</p>
                 <label class="custom_radio_container">
                     Read
-                    <input type="radio" name="radio" required>
+                    <input type="radio" name="radio" value="y" required>
                     <span class="custom_radio_checkmark"></span>
                 </label>
                 <label class="custom_radio_container">
                     Not Read
-                    <input type="radio" name="radio" required>
+                    <input type="radio" name="radio" value="n" required>
                     <span class="custom_radio_checkmark"></span>
                 </label>
             </div>
