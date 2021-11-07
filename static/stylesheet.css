@@ -65,6 +65,12 @@ body #content span:hover {
   cursor: pointer;
 }
 
+@media (max-width: 576px) {
+  body #content span {
+    width: 100%;
+  }
+}
+
 body #content table {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -79,6 +85,12 @@ body #content table tr:nth-child(odd) {
 
 body #content table tr td {
   padding: 2px;
+}
+
+@media (max-width: 576px) {
+  body #content table {
+    width: 100%;
+  }
 }
 
 body footer {
@@ -150,6 +162,12 @@ body #book_form_container #book_form .close_button:hover {
   color: #ccc;
 }
 
+@media (max-width: 576px) {
+  body #book_form_container #book_form {
+    width: 80%;
+  }
+}
+
 body #book_form_container .text_label {
   width: 50%;
   font-size: 20px;
@@ -204,9 +222,9 @@ body #book_form_container button:hover {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -239,7 +257,7 @@ body #book_form_container button:hover {
 }
 
 .custom_radio_checkmark {
-  margin-left: 10px;
+  margin-right: 10px;
   height: 25px;
   width: 25px;
   border-radius: 50%;

@@ -4,6 +4,7 @@ $font-size: $padding-elements;
 $width-elements: 50%;
 $height-elements: 40px;
 $border-radius: 5px;
+$xs: 576px;
 
 @mixin centered-flex {
     display: flex;
@@ -40,6 +41,9 @@ body {
                     cursor: pointer;
                     color: #ccc;
                 }
+            }
+            @media (max-width: $xs) {
+                width: 80%;
             }
         }
         .text_label {
